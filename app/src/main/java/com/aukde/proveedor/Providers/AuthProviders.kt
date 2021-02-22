@@ -6,11 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AuthProviders {
 
-     var mAuth: FirebaseAuth
-
-    init {
-        mAuth = FirebaseAuth.getInstance()
-    }
+     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     fun login(email: String?, password: String?): Task<AuthResult> {
         return mAuth.signInWithEmailAndPassword(email!!, password!!)
@@ -22,6 +18,5 @@ class AuthProviders {
     fun logout() {
         mAuth.signOut()
     }
-
-
+    
 }

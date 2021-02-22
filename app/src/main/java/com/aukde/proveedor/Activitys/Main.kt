@@ -42,6 +42,7 @@ class Main : AppCompatActivity() {
         if (!email.isEmpty() && !password.isEmpty()){
             if (password.length>=6){
                 // terminar de implementar
+
             }
             else{
                 Toasty.error(this,"La contraseña debe tener mas de 6 carácteres",Toast.LENGTH_SHORT,false).show()
