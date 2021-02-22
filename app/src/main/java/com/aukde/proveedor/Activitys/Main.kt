@@ -9,24 +9,26 @@ import com.aukde.proveedor.Providers.AuthProviders
 import com.aukde.proveedor.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import es.dmoral.toasty.Toasty
 
 class Main : AppCompatActivity() {
 
-    var mAuth :AuthProviders? = null
     var edtEmail : TextInputEditText? = null
     var edtPassword : TextInputEditText? = null
-
+   
     override fun onCreate(savedInstanceState: Bundle?) {
 
         setTheme(R.style.AppThemePink)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val btnLogin  = findViewById<Button>(R.id.btnLogin)
         edtEmail = findViewById(R.id.edtEmail)
         edtPassword = findViewById(R.id.edtPassword)
-        mAuth =  AuthProviders()
 
         btnLogin.setOnClickListener(View.OnClickListener {
             login()
