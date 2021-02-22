@@ -12,11 +12,12 @@ class AuthProviders {
         return mAuth.signInWithEmailAndPassword(email!!, password!!)
     }
 
-    val id: String
-        get() = mAuth.currentUser!!.uid
+    fun proveedorID(): String {
+        return mAuth.currentUser!!.uid
+    }
 
     fun logout() {
         mAuth.signOut()
     }
-    
+
 }
