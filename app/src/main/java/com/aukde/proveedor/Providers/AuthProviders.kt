@@ -6,22 +6,22 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AuthProviders {
 
-     var mAuth: FirebaseAuth? = null
+     var mAuth: FirebaseAuth
 
-      fun AuthProviders(){
+    init {
         mAuth = FirebaseAuth.getInstance()
     }
 
-    fun login(email : String , password : String ) : Task<AuthResult>? {
-        return mAuth?.signInWithEmailAndPassword(email,password)
+    fun login(email: String?, password: String?): Task<AuthResult> {
+        return mAuth.signInWithEmailAndPassword(email!!, password!!)
     }
 
-    fun getID() : String? {
-        return mAuth?.currentUser?.uid
+    val id: String
+        get() = mAuth.currentUser!!.uid
+
+    fun logout() {
+        mAuth.signOut()
     }
 
-    fun logout(){
-        mAuth?.signOut()
-    }
 
 }
