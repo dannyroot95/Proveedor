@@ -23,6 +23,15 @@ class AuthProviders {
         mAuth.signOut()
     }
 
+    fun session() : Boolean{
+        var existe = false
+        if (mAuth.currentUser !=null)
+        {
+            existe = true
+        }
+        return  existe
+    }
+
     init {
         mAuth = Firebase.auth
     }
