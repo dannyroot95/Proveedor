@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:height="390dp" android:width="390dp" android:gravity="center">
+        <shape android:shape="oval" > <solid android:color="#f25491"/>
+            <stroke android:width="0dp" android:color="@android:color/transparent"/> </shape>
+    </item>
+    <item android:height="350dp" android:width="350dp" android:gravity="center">
+        <shape android:shape="oval" > <solid android:color="#f86ba1"/>
+            <stroke android:width="0dp" android:color="@android:color/transparent"/> </shape>
+    </item>
+    <item android:height="270dp" android:width="270dp" android:gravity="center">
+        <shape android:shape="oval" > <solid android:color="#f74e8f"/>
+            <stroke android:width="0dp" android:color="@android:color/transparent"/> </shape>
+    </item>
+
+    <item android:height="248dp" android:width="248dp" android:gravity="center">
+        <shape android:shape="oval" > <solid android:color="#f73d85"/>
+            <stroke android:width="0dp" android:color="transparent"/> </shape>
+    </item>
+
+    <item android:height="204dp" android:width="204dp" android:gravity="center">
+        <shape android:shape="oval"> <solid android:color="#FFFFFF"/>
+            <stroke android:width="0dp" android:color="@android:color/transparent"/> </shape>
+    </item>
+
+    <item android:height="160dp" android:width="160dp" android:gravity="center">
+        <shape android:shape="oval" > <solid android:color="#FFFFFF80"/>
+            <stroke android:width="0dp" android:color="transparent"/> </shape>
+    </item>
+
+</layer-list>
