@@ -33,6 +33,11 @@
         <item name="colorPrimary">#EC407A</item>
         <item name="colorPrimaryDark">#EC407A</item>
     </style>
+    <style name="AppThemaSplash2" parent="@style/AppThemeSplash">
+        <item name="android:windowBackground">@drawable/splashscreen2</item>
+        <item name="colorPrimary">#e53a81</item>
+        <item name="colorPrimaryDark">#e53a81</item>
+    </style>
 
     <style name="AppThemeSplash" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activitys.Menu">
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="-60dp"
         android:orientation="vertical"
-        android:layout_gravity="center"
         >
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,5 +28,64 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/usuarios"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Mi Perfil"
+                android:layout_gravity="center"
+                android:id="@+id/txtMiPerfil"
+                android:padding="10dp"
+                android:textColor="#ffffff"
 
-</LinearLayout>
+                android:fontFamily="@font/futura"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/usuarios"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Mi Perfil"
+                android:layout_gravity="center"
+                android:id="@+id/txt"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+
+                android:fontFamily="@font/futura"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
