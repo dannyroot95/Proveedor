@@ -87,6 +87,8 @@
                 android:layout_height="wrap_content"
                 android:text="Iniciar sesión"
                 android:textColor="#ffffff"
+                android:clickable="true"
+                android:padding="10dp"
                 android:fontFamily="@font/futura"
                 android:id="@+id/btnLogin"
                 android:backgroundTint="#000"/>

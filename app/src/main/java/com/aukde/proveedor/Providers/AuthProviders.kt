@@ -10,17 +10,21 @@ class AuthProviders {
 
     var mAuth: FirebaseAuth
 
-
     fun login(email: String?, password: String?): Task<AuthResult> {
         return mAuth.signInWithEmailAndPassword(email!!, password!!)
     }
 
     fun proveedorID(): String {
-        return mAuth.currentUser!!.uid
-    }
+        return mAuth.currentUser!!.uid }
 
     fun logout() {
-        mAuth.signOut()
+        mAuth.signOut() }
+
+    fun session(): Boolean {
+        var existe = false
+        if (mAuth.currentUser != null) {
+            existe = true }
+        return existe
     }
 
     init {

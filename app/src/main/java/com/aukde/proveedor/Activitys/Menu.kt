@@ -6,6 +6,7 @@ import com.aukde.proveedor.R
 
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppThemePink)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
     }
