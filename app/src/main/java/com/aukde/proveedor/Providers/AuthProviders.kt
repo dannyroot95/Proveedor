@@ -8,13 +8,13 @@ import com.google.firebase.ktx.Firebase
 
 class AuthProviders {
 
-    var mAuth: FirebaseAuth
+    var mAuth: FirebaseAuth = Firebase.auth
 
     fun login(email: String?, password: String?): Task<AuthResult> {
         return mAuth.signInWithEmailAndPassword(email!!, password!!)
     }
 
-    fun proveedorID(): String {
+    fun userID(): String {
         return mAuth.currentUser!!.uid }
 
     fun logout() {
@@ -25,10 +25,6 @@ class AuthProviders {
         if (mAuth.currentUser != null) {
             existe = true }
         return existe
-    }
-
-    init {
-        mAuth = Firebase.auth
     }
 
 }

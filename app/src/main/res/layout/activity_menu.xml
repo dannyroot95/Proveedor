@@ -30,32 +30,37 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
             android:elevation="6dp"
-            android:layout_marginRight="70dp"
             android:gravity="right|center_vertical"
-            android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/nameUser"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/futura"
                     android:text="Usuario : Proveedor"
                     android:textColor="#fff"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/futura"
-                    android:layout_height="wrap_content" />
+                    android:textSize="20sp" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:text="Comidas y bebidas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:id="@+id/nameCategory"
+                    android:elevation="6dp"
                     android:drawableLeft="@drawable/ic_store"
-                    android:textColor="#fff"
                     android:fontFamily="@font/futura"
-                    android:layout_height="wrap_content" />
+                    android:text="Pastelería y repostería"
+                    android:textColor="#fff" />
 
             </LinearLayout>
         </LinearLayout>
@@ -73,7 +78,10 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="80dp"
+                android:id="@+id/logo"
                 app:civ_border_width="5dp"
+                android:clickable="true"
+                android:foreground="@drawable/shadow"
                 app:civ_border_color="@color/white"
                 android:src="@drawable/ic_temp_pic"
                 android:layout_height="80dp"/>
