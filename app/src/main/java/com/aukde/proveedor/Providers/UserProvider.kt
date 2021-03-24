@@ -11,7 +11,7 @@ class UserProvider {
         mDatabase = FirebaseDatabase.getInstance().reference
         return mDatabase!!
                 .child("Usuarios")
-                .child("com.aukde.proveedor.Models.ProviderEntity")
+                .child("Proveedor")
                 .child(id)
     }
 

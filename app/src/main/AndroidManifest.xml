@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.aukde.proveedor">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
-        android:name=".Models.ProviderApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:grantUriPermissions="true"
         android:theme="@style/Theme.Proveedor">
         <activity android:name=".Activitys.Menu"></activity>
         <activity android:name=".Activitys.Main"  android:theme="@style/SplashScreenTheme">

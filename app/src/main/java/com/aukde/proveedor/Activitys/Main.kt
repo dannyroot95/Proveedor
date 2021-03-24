@@ -16,7 +16,7 @@ class Main : AppCompatActivity() {
 
     var edtEmail : TextInputEditText? = null
     var edtPassword : TextInputEditText? = null
-    var mAuth : AuthProviders? = null
+    lateinit var mAuth : AuthProviders
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -37,13 +37,13 @@ class Main : AppCompatActivity() {
 
     private fun login() {
 
-        var email : String = edtEmail?.text.toString()
-        var password : String = edtPassword?.text.toString()
+        val email : String = edtEmail?.text.toString()
+        val password : String = edtPassword?.text.toString()
 
-        if (!email.isEmpty() && !password.isEmpty()){
+        if (email.isNotEmpty() && password.isNotEmpty()){
             if (password.length>=6){
                 // terminar de implementar
-                mAuth?.login(email,password)?.addOnCompleteListener(OnCompleteListener {
+                mAuth.login(email,password).addOnCompleteListener(OnCompleteListener {
                     if (it.isSuccessful){
                         startActivity(Intent(this,Menu::class.java))
                         finish()
@@ -62,8 +62,9 @@ class Main : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (mAuth?.session() == true){
+        if (mAuth.session()){
             startActivity(Intent(this,Menu::class.java))
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_enter_anim)
         } else{
         }
     }
