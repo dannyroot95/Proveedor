@@ -3,21 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.aukde.proveedor">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
+        android:grantUriPermissions="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:requestLegacyExternalStorage="true"
-        android:grantUriPermissions="true"
         android:theme="@style/Theme.Proveedor">
-        <activity android:name=".Activitys.Menu"></activity>
-        <activity android:name=".Activitys.Main"  android:theme="@style/SplashScreenTheme">
+        <activity android:name=".Activitys.OrderList"></activity>
+        <activity android:name=".Activitys.Menu" />
+        <activity
+            android:name=".Activitys.Main"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

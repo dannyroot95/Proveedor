@@ -61,11 +61,12 @@ class Main : AppCompatActivity() {
     }
 
     override fun onStart() {
-        super.onStart()
+
         if (mAuth.session()){
             startActivity(Intent(this,Menu::class.java))
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_enter_anim)
         } else{
         }
+        super.onStart()
     }
 }

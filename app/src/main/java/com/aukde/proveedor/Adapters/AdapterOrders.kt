@@ -9,10 +9,8 @@ import com.aukde.proveedor.Models.Orders
 import com.aukde.proveedor.R
 
 
-class AdapterOrders(private val dataSet: Array<String>) :
+class AdapterOrders(var dataSet: List<Orders>) :
         RecyclerView.Adapter<AdapterOrders.ViewHolder>() {
-
-    private lateinit var listOrder : List<Orders>
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var txtNumOrder : TextView = itemView.findViewById(R.id.lsNumOrder)
@@ -31,7 +29,7 @@ class AdapterOrders(private val dataSet: Array<String>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        val ls : Orders = listOrder[position]
+        val ls : Orders = dataSet[position]
         viewHolder.txtNumOrder.text = ls.numOrder
         viewHolder.txtName.text = ls.name
         viewHolder.txtLastName.text = ls.lastName

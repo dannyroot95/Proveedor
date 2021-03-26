@@ -2,6 +2,7 @@ package com.aukde.proveedor.Activitys
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -14,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.aukde.proveedor.Providers.AuthProviders
@@ -76,6 +78,11 @@ class Menu : AppCompatActivity() {
         path          = Environment.getExternalStorageDirectory().absolutePath+"/"+"ProviderData"
         file          = File(path)
 
+        val listButton: CardView = findViewById(R.id.btnListOrders)
+        listButton.setOnClickListener{
+            startActivity(Intent(this, com.aukde.proveedor.Activitys.OrderList::class.java))
+        }
+
         getBasicInformation()
     }
 
@@ -100,26 +107,25 @@ class Menu : AppCompatActivity() {
 
                         val urlImage: String = snapshot.child("photo").value.toString()
                         Glide.with(this@Menu)
-                                .load(urlImage)
-                                .into(logo!!)
+                            .load(urlImage)
+                            .into(logo!!)
                         Glide.with(this@Menu)
-                                .load(urlImage)
-                                .into(object : CustomTarget<Drawable>() {
-                                    override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
-                                        val bitmap: Bitmap = (resource as BitmapDrawable).bitmap
-                                        saveInStorage.saveImage(bitmap, file, name)
-                                    }
+                            .load(urlImage)
+                            .into(object : CustomTarget<Drawable>() {
+                                override fun onResourceReady(
+                                    resource: Drawable,
+                                    transition: Transition<in Drawable>?
+                                ) {
+                                    val bitmap: Bitmap = (resource as BitmapDrawable).bitmap
+                                    saveInStorage.saveImage(bitmap, file, name)
+                                }
 
-                                    override fun onLoadCleared(placeholder: Drawable?) {
-                                    }
+                                override fun onLoadCleared(placeholder: Drawable?) {
+                                }
 
-                                    override fun onLoadFailed(errorDrawable: Drawable?) {
-                                        super.onLoadFailed(errorDrawable)
-                                    }
-                                })
+                            })
                         mDialog.dismissDialog()
-                    }
-                    else {
+                    } else {
                         Toasty.error(this@Menu, "Error de BD", Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -143,9 +149,17 @@ class Menu : AppCompatActivity() {
         Glide.with(this@Menu).load(toLoad).into(logo!!)
 
     }
-    
+
+   private fun quit(){
+        val start = Intent(Intent.ACTION_MAIN)
+        start.addCategory(Intent.CATEGORY_HOME)
+        start.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        start.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(start)
+    }
+
     override fun onBackPressed() {
-        finish()
+        quit()
     }
 
 }
