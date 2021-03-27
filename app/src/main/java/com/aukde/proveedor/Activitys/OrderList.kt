@@ -86,7 +86,6 @@ class OrderList : AppCompatActivity() {
                 list.add(obj)
             }
         }
-
         val viewSearchAdapter = AdapterOrders(list)
         recyclerView.adapter = viewSearchAdapter
 
