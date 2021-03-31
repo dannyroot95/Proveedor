@@ -53,7 +53,7 @@ class NotificationHelper(base: Context?) : ContextWrapper(base) {
                 .setLargeIcon(bmp)
                 .setAutoCancel(true)
                 .setStyle(Notification.BigPictureStyle()
-                        .bigPicture(bmp).bigLargeIcon(bmp))
+                .bigPicture(bmp).bigLargeIcon(bmp))
                 .setSound(sonidoUri)
                 .setContentIntent(intent)
                 .setOngoing(true)
@@ -144,7 +144,7 @@ class NotificationHelper(base: Context?) : ContextWrapper(base) {
     }
 
     companion object {
-        private const val CHANNEL_ID = "aukde.food.proveedor"
+        private const val CHANNEL_ID = "com.aukde.proveedor"
         private const val CHANNEL_NAME = "Proveedor"
     }
 

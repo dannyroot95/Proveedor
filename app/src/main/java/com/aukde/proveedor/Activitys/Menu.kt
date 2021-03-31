@@ -19,6 +19,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.aukde.proveedor.Providers.AuthProviders
+import com.aukde.proveedor.Providers.TokenProvider
 import com.aukde.proveedor.Providers.UserProvider
 import com.aukde.proveedor.R
 import com.aukde.proveedor.Utils.ImportDataDialog
@@ -47,6 +48,7 @@ class Menu : AppCompatActivity() {
     lateinit var file : File
     val name = "profile.png"
     lateinit var mDialog : ImportDataDialog
+    private lateinit var tokenProvider : TokenProvider
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +79,7 @@ class Menu : AppCompatActivity() {
         logo          = findViewById(R.id.logo)
         path          = Environment.getExternalStorageDirectory().absolutePath+"/"+"ProviderData"
         file          = File(path)
+        tokenProvider = TokenProvider()
 
         val listButton: CardView = findViewById(R.id.btnListOrders)
         listButton.setOnClickListener{
@@ -118,6 +121,7 @@ class Menu : AppCompatActivity() {
                                 ) {
                                     val bitmap: Bitmap = (resource as BitmapDrawable).bitmap
                                     saveInStorage.saveImage(bitmap, file, name)
+                                    generateToken()
                                 }
 
                                 override fun onLoadCleared(placeholder: Drawable?) {
@@ -142,13 +146,15 @@ class Menu : AppCompatActivity() {
     }
 
     private fun sharedData(){
-
         val toLoad = File(Environment.getExternalStorageDirectory().absolutePath + "/ProviderData/profile.png")
         nameProvider!!.text = sharedName.getString("KeyName", "")
         nameCategory!!.text  = sharedName.getString("KeyCategory", "")
         Glide.with(this@Menu).load(toLoad).into(logo!!)
-
     }
+
+   private fun generateToken(){
+       tokenProvider.createToken(id)
+   }
 
    private fun quit(){
         val start = Intent(Intent.ACTION_MAIN)
